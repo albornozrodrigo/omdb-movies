@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="OmdbMovies">
+<head>
+	<title>OMDB Movies</title>
+
+    <!-- META -->
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- /META -->
+
+    <!-- CSS -->
+	<link href="assets/css/material.min.css" rel="stylesheet" />
+	<link href="assets/css/app.min.css" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- /CSS -->
+</head>
+<body>
+
+	<div class="background-header mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+		<header class="mdl-layout__header mdl-layout__header--default">
+    		<div class="mdl-layout__header-row">
+			    <span class="mdl-layout-title">OMDB Movies</span>
+    		</div>
+		</header>
+
+		<div class="mdl-layout__drawer">
+			<nav class="mdl-navigation">
+			    <a class="mdl-navigation__link" href="http://www.omdbapi.com/" target="_blank">OMDB API</a>
+			    <a class="mdl-navigation__link" href="https://github.com/xchilenox/omdb-movies" target="_blank">Github Repository</a>
+			    <span class="mdl-navigation__link">↑ ↑ ↓ ↓ ← → ← → B A</span>
+			</nav>
+		</div>
+
+		<!-- MAIN -->
+		<main ng-view on-scroll class="mdl-layout__content"></main>
+		<!-- /MAIN -->
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/vendor/angular.min.js"></script>
+	<script src="assets/js/vendor/angular-route.min.js"></script>
+    <script src="assets/js/vendor/angular-resource.min.js"></script>
+    <script src="assets/js/vendor/material.min.js"></script>
+    <script src="assets/js/vendor/ng-storage.min.js"></script>
+    <script src="assets/js/vendor/konami.js"></script>
+    <script src="assets/js/vendor/matrix.min.js"></script>
+
+	<!-- App -->
+	<script src="assets/js/app/app.modules.js"></script>
+    <script src="assets/js/app/app.config.js"></script>
+    <script src="assets/js/app/app.routes.js"></script>
+    <script src="assets/js/app/app.run.js"></script>
+
+	<!-- Controllers -->
+	<script src="assets/js/app/controllers/home.controller.js"></script>
+	<script src="assets/js/app/controllers/movie.controller.js"></script>
+
+	<!-- Services -->
+	<script src="assets/js/app/services/omdb.service.js"></script>
+
+	<!-- Factories -->
+	<script src="assets/js/app/factories/dialog.factory.js"></script>
+
+	<!-- Directives -->
+	<script src="assets/js/app/directives/on-scroll.directive.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "omdb-movies",
+  "version": "0.0.1",
+  "description": "OMDB movies search",
+  "homepage": "https://github.com/xchilenox/omdb-movies",
+  "private": true,
+  "authors": [
+    "Rodrigo Albornoz <rodrigo.albornoz.f@gmail.com>"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-resource": "^1.5.0",
+    "angular-animate": "^1.5.0",
+    "angular-route": "^1.5.0",
+    "material-design-lite": "^1.1.1",
+    "angular-simple-local-storage": "^0.0.1",
+    "matrix-easter-egg": "^0.0.1"
+  },
+  "resolutions": {
+    "angular": "^1.5.0"
+  }
+}

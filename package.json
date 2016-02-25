@@ -1,0 +1,33 @@
+{
+  "name": "omdb-movies",
+  "version": "0.0.1",
+  "description": "OMDB movies search",
+  "main": "index.html",
+  "dependencies": {
+    "bower": "^1.7.7",
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.0",
+    "gulp-minify-css": "^1.2.3",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0",
+    "jshint": "^2.9.1",
+    "jshint-stylish": "^2.1.0",
+    "rimraf": "^2.5.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xchilenox/omdb-movies.git"
+  },
+  "keywords": [
+    "imdb",
+    "movies",
+    "search"
+  ],
+  "author": "Rodrigo Albornoz <rodrigo.albornoz.f@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xchilenox/omdb-movies/issues"
+  },
+  "homepage": "https://github.com/xchilenox/omdb-movies"
+}

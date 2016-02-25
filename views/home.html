@@ -1,0 +1,61 @@
+<!-- SEARCH FORM -->
+<div class="mdl-grid">
+	<form name="form_search" class="form-search mdl-card mdl-cell mdl-cell--12-col mdl-shadow--2dp" ng-class="{'collapse': collapse}" ng-submit="buscar(true)" autocomplete="off">
+		<div class="mdl-card__title mdl-color--primary mdl-color-text--white">
+			<h2 class="mdl-card__title-text">Busque um filme no OMDB</h2>
+		</div>
+
+		<div class="mdl-card__supporting-text">
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		    	<input class="mdl-textfield__input" type="text" id="title" name="title" ng-model="title" value="{{title}}" required />
+		    	<label class="mdl-textfield__label" for="title">Procure seu filme</label>
+			</div>
+		</div>
+
+		<div class="mdl-card__actions mdl-card--border">
+			<button type="submit" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-disabled="form_search.$invalid">Buscar</button>
+		</div>
+
+		<div class="mdl-card__actions mdl-card--border" ng-show="progress">
+			<div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+		</div>
+	</form>
+</div>
+<!-- /SEARCH FORM -->
+
+<div class="mdl-grid" ng-if="movies.length > 0" infinite-scroll="loadMore()">
+	<div class="text-center mdl-card mdl-cell mdl-cell--6-col mdl-cell--3-col-tablet mdl-cell--3-col-desktop mdl-shadow--2dp" ng-repeat="movie in movies | limitTo: limit">
+		<div class="mdl-card__title mdl-color--primary mdl-color-text--white">
+	    	<h3 class="mdl-card__title-text">{{movie.Title}}</h3>
+		</div>
+
+		<div class="show-info">
+			<div class="info">
+				<p><strong>IMDB-ID:</strong> {{movie.imdbID}}</p>
+				<p><strong>Tipo:</strong> {{movie.Type}}</p>
+				<p><strong>Ano:</strong> {{movie.Year}}</p>
+			</div>
+
+			<ng-switch on="movie.Poster">
+				<img ng-switch-when="N/A" ng-src="assets/img/no-image.jpg" class="img-responsive center-block" />
+				<img ng-switch-default ng-src="{{movie.Poster}}" class="img-responsive center-block" />
+			</ng-switch>
+		</div>
+
+		<div class="mdl-card__actions mdl-card--border">
+			<button ng-click="moreInfo(movie.imdbID)" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">+ Info</button>
+		</div>
+	</div>
+</div>
+
+<dialog class="mdl-dialog">
+    <h4 class="mdl-dialog__title">{{dialog.title}}</h4>
+
+    <div class="mdl-dialog__content">
+    	<p>{{dialog.text}}</p>
+    </div>
+
+    <div class="mdl-dialog__actions">
+    	<button type="button" class="mdl-button" ng-click="closeDialog()">OK</button>
+    </div>
+</dialog>

@@ -1,0 +1,40 @@
+<div class="mdl-grid">
+	<div class="text-center mdl-card mdl-cell mdl-cell--12-col-phone mdl-cell--6-col-tablet mdl-cell--6-col-desktop mdl-shadow--2dp">
+		<div class="mdl-card__title mdl-color--primary mdl-color-text--white mdl-card--expand">
+			<label id="goback" class="mdl-button mdl-js-button mdl-button--icon" ng-click="goBack()">
+        		<i class="material-icons" role="presentation">arrow_back</i>
+        	</label>
+
+        	<span class="mdl-tooltip mdl-tooltip--large mdl-tooltip--right" for="goback">Voltar</span>
+
+			<h2 class="mdl-card__title-text">{{movie.Title}}</h2>
+		</div>
+
+		<div class="mdl-card__supporting-text">
+			<ng-switch on="movie.Poster">
+				<img ng-switch-when="N/A" ng-src="assets/img/no-image.jpg" class="img-responsive center-block" />
+				<img ng-switch-default ng-src="{{movie.Poster}}" class="img-responsive center-block" />
+			</ng-switch>
+		</div>
+	</div>
+	<div class="mdl-card mdl-cell mdl-cell--6-col mdl-shadow--2dp">
+		<div class="mdl-card__title mdl-color--primary mdl-color-text--white">
+			<h2 class="mdl-card__title-text">Detalhes do filme</h2>
+		</div>
+		<div class="mdl-card__supporting-text">
+			<p><strong>Diretor:</strong> {{movie.Director}}</p>
+			<p><strong>Roteiro:</strong> {{movie.Writer}}</p>
+			<p><strong>Elenco:</strong> {{movie.Actors}}</p>
+			<p><strong>Gênero:</strong> {{movie.Genre}}</p>
+			<p><strong>Estréia:</strong> {{movie.Released}}</p>
+			<p><strong>Premiações:</strong> {{movie.Awards}}</p>
+			<p><strong>País:</strong> {{movie.Country}}</p>
+			<p><strong>Idioma:</strong> {{movie.Language}}</p>
+			<p><strong>Sinopse:</strong> {{movie.Plot}}</p>
+			<p><strong>Classificação indicativa:</strong> {{movie.Rated}}</p>
+			<p><strong>Duração:</strong> {{movie.Runtime}}</p>
+			<p><strong>IMDB score:</strong> {{movie.imdbRating}}</p>
+			<p><strong>IMDB votes:</strong> {{movie.imdbVotes}}</p>
+		</div>
+	</div>
+</div>
